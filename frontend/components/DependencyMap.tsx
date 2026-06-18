@@ -13,7 +13,7 @@ const icon = L.icon({
   iconAnchor: [12, 41],
 });
 
-export default function DependencyMap() {
+export default function DependencyMap({ filters }: { filters: { extraction: boolean; processing: boolean } }) {
   const [geoData, setGeoData] = useState<any>(null);
   const [error, setError] = useState<string | null>(null);
 
@@ -43,7 +43,16 @@ export default function DependencyMap() {
           attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
         />
         
-        {geoData?.features?.map((feature: any) => (
+        {geoData?.features?.filter((feature: any) => {
+          const isExtraction = feature.properties.type.includes("Extraction");
+          const isProcessing = feature.properties.type.includes("Processing");
+          
+          if (isExtraction && !isProcessing) return filters.extraction;
+          if (isProcessing && !isExtraction) return filters.processing;
+          if (isExtraction && isProcessing) return filters.extraction || filters.processing;
+          
+          return true;
+        }).map((feature: any) => (
           <Marker
             key={feature.properties.id}
             position={[

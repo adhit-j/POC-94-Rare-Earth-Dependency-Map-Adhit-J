@@ -14,7 +14,7 @@ const DependencyMap = dynamic(() => import("./DependencyMap"), {
   ),
 });
 
-export default function MainStage() {
+export default function MainStage({ filters }: { filters: { extraction: boolean; processing: boolean } }) {
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -24,7 +24,7 @@ export default function MainStage() {
   return (
     <main className="w-[70%] h-screen relative bg-background flex items-center justify-center border-r border-border z-0 overflow-hidden">
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/stardust.png')] opacity-20 pointer-events-none z-10"></div>
-      {mounted && <DependencyMap />}
+      {mounted && <DependencyMap filters={filters} />}
     </main>
   );
 }
