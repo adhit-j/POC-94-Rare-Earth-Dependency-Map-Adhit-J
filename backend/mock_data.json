@@ -1,0 +1,56 @@
+{
+  "nodes": [
+    {
+      "id": "1",
+      "name": "Mountain Pass Mine",
+      "country": "USA",
+      "type": "Extraction",
+      "coordinates": [-115.5392, 35.4746],
+      "properties": {
+        "status": "Active",
+        "capacity_metric": "15% of Global Extraction",
+        "insight": "Critical domestic source attempting to reduce foreign reliance.",
+        "control": "MP Materials (US)"
+      }
+    },
+    {
+      "id": "2",
+      "name": "Bayan Obo Mine",
+      "country": "China",
+      "type": "Extraction & Processing",
+      "coordinates": [109.9676, 41.7963],
+      "properties": {
+        "status": "Active",
+        "capacity_metric": "45% of Global Extraction",
+        "insight": "The world's largest rare earth deposit, anchoring global supply.",
+        "control": "State-Owned Enterprise (China)"
+      }
+    },
+    {
+      "id": "3",
+      "name": "Lynas Processing Plant",
+      "country": "Malaysia",
+      "type": "Processing",
+      "coordinates": [103.3855, 3.9786],
+      "properties": {
+        "status": "Active",
+        "capacity_metric": "Largest outside China",
+        "insight": "Key alternative processing node for allied supply chains.",
+        "control": "Lynas Rare Earths (Australia)"
+      }
+    },
+    {
+      "id": "4",
+      "name": "Mount Weld",
+      "country": "Australia",
+      "type": "Extraction",
+      "coordinates": [122.5020, -28.7845],
+      "properties": {
+        "status": "Active",
+        "capacity_metric": "Tier 1 Deposit",
+        "insight": "High-grade source feeding Malaysian processing facilities.",
+        "control": "Lynas Rare Earths (Australia)"
+      }
+    }
+  ]
+}
