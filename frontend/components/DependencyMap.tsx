@@ -130,6 +130,23 @@ function NodePopup({ p }: { p: any }) {
         <div style={{ fontSize: 11, color: "#D1D5DB" }}>{p.control}</div>
       </div>
 
+      {/* Key REEs */}
+      {p.key_rees && (
+        <div style={{ background: "#030b14", borderRadius: 8, padding: "8px 10px", border: "1px solid #1a2332", marginBottom: 10 }}>
+          <div style={{ fontSize: 9, color: "#4B5563", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 6 }}>Key REEs</div>
+          <div style={{ display: "flex", gap: 6, flexWrap: "wrap" }}>
+            {p.key_rees.map((ree: string) => (
+              <span key={ree} style={{
+                fontSize: 9, fontWeight: 700, color: color, background: `${color}15`,
+                border: `1px solid ${color}40`, borderRadius: 4, padding: "2px 6px"
+              }}>
+                {ree}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* Insight */}
       <div style={{ borderTop: "1px solid #1a2332", paddingTop: 10 }}>
         <div style={{ fontSize: 9, color: "#818CF8", textTransform: "uppercase", letterSpacing: "0.1em", marginBottom: 4 }}>⚡ Intelligence</div>
@@ -205,9 +222,11 @@ export default function DependencyMap({
       {/* ── Map ── */}
       <MapContainer
         center={[20, 10]}
-        zoom={2}
-        minZoom={2}
+        zoom={2.5}
+        minZoom={2.5}
         maxZoom={10}
+        maxBounds={[[-90, -180], [90, 180]]}
+        maxBoundsViscosity={1.0}
         className="w-full h-full"
         style={{ background: "#030b14" }}
         zoomControl={false}
@@ -218,6 +237,7 @@ export default function DependencyMap({
           attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
           subdomains="abcd"
           maxZoom={20}
+          noWrap={true}
         />
         {/* Labels-only overlay so country names still appear */}
         <TileLayer
@@ -225,6 +245,7 @@ export default function DependencyMap({
           subdomains="abcd"
           maxZoom={20}
           pane="shadowPane"
+          noWrap={true}
         />
 
         <ZoomControl position="bottomright" />

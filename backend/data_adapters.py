@@ -47,7 +47,8 @@ def fetch_live_usgs_data():
                 "status": "Active",
                 "capacity_metric": "15% of Global Extraction",
                 "insight": f"Critical domestic source. Metal exports: {wb_data.get('United States', 'N/A')}.",
-                "control": "MP Materials (US)"
+                "control": "MP Materials (US)",
+                "key_rees": ["Neodymium", "Praseodymium", "Lanthanum"]
             }
         },
         {
@@ -60,7 +61,8 @@ def fetch_live_usgs_data():
                 "status": "Active",
                 "capacity_metric": "45% of Global Extraction",
                 "insight": f"The world's largest deposit. Metal exports: {wb_data.get('China', 'N/A')}.",
-                "control": "State-Owned Enterprise (China)"
+                "control": "State-Owned Enterprise (China)",
+                "key_rees": ["Neodymium", "Dysprosium", "Terbium"]
             }
         },
         {
@@ -73,7 +75,8 @@ def fetch_live_usgs_data():
                 "status": "Active",
                 "capacity_metric": "Largest outside China",
                 "insight": f"Key alternative processing node. Metal exports: {wb_data.get('Malaysia', 'N/A')}.",
-                "control": "Lynas Rare Earths (Australia)"
+                "control": "Lynas Rare Earths (Australia)",
+                "key_rees": ["Neodymium", "Praseodymium", "Cerium"]
             }
         },
         {
@@ -86,7 +89,8 @@ def fetch_live_usgs_data():
                 "status": "Active",
                 "capacity_metric": "Tier 1 Deposit",
                 "insight": f"High-grade source. Metal exports: {wb_data.get('Australia', 'N/A')}.",
-                "control": "Lynas Rare Earths (Australia)"
+                "control": "Lynas Rare Earths (Australia)",
+                "key_rees": ["Neodymium", "Praseodymium", "Samarium"]
             }
         }
     ]

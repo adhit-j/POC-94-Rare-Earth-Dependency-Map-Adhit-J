@@ -92,9 +92,9 @@ export default function Sidebar({ filters, toggleFilter }: SidebarProps) {
         {/* Mini stat row */}
         <div className="mt-4 grid grid-cols-3 gap-2">
           {[
-            { v: "17", l: "REEs" },
-            { v: "4", l: "Sites" },
-            { v: "HIGH", l: "Risk", red: true },
+            { v: "17", l: "Critical REEs" },
+            { v: "82/100", l: "Global Dependency" },
+            { v: "HIGH", l: "Concentration Risk", red: true },
           ].map((s) => (
             <div
               key={s.l}
@@ -186,28 +186,35 @@ export default function Sidebar({ filters, toggleFilter }: SidebarProps) {
         </p>
       </div>
 
-      {/* ── WHO CONTROLS THE RAIL ──────────────── */}
+      {/* ── TOP INSIGHT & STRATEGY NOTES ───────── */}
       <div className="px-5 py-4" style={{ borderBottom: "1px solid #1a2332" }}>
-        <p className="section-label mb-3">Extraction Share</p>
-        <div className="space-y-2.5">
-          {[
-            { country: "China",     pct: 60, color: "#38BDF8" },
-            { country: "USA",       pct: 14, color: "#818CF8" },
-            { country: "Australia", pct: 9,  color: "#34D399" },
-            { country: "Myanmar",   pct: 7,  color: "#F59E0B" },
-            { country: "Others",    pct: 10, color: "#4B5563" },
-          ].map((item) => (
-            <div key={item.country}>
-              <div className="flex justify-between items-center mb-1">
-                <span className="text-[11px] text-gray-400">{item.country}</span>
-                <span className="text-[11px] font-bold" style={{ color: item.color }}>{item.pct}%</span>
-              </div>
-              <div className="progress-bar">
-                <div className="progress-bar-fill" style={{ width: `${item.pct}%`, background: item.color }} />
-              </div>
-            </div>
-          ))}
+        
+        {/* Top Insight Card */}
+        <div style={{ background: "rgba(239, 68, 68, 0.05)", border: "1px solid rgba(239, 68, 68, 0.3)", borderRadius: 8, padding: 12, marginBottom: 16 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 6, marginBottom: 6 }}>
+            <span style={{ fontSize: 14 }}>🚨</span>
+            <span style={{ fontSize: 10, fontWeight: 800, color: "#F87171", textTransform: "uppercase", letterSpacing: "0.1em" }}>Top Insight: Single Point of Failure</span>
+          </div>
+          <p style={{ fontSize: 11, color: "#D1D5DB", lineHeight: 1.5 }}>
+            <strong style={{ color: "#fff" }}>85% of global processing capacity</strong> is concentrated in China, creating critical vulnerabilities for Western defense, EV, and renewable energy supply chains.
+          </p>
         </div>
+
+        {/* Strategy Notes */}
+        <p className="section-label mb-3">Strategy Notes</p>
+        <ul className="space-y-3">
+          {[
+            "China remains globally dominant across the midstream processing layer.",
+            "Australia offers the highest tier-1 diversification potential outside Asia.",
+            "US industrial policy is heavily mobilizing to reduce reliance on import exposure.",
+            "Refining & processing capacity remains a far larger bottleneck than raw extraction."
+          ].map((note, i) => (
+            <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: 8 }}>
+              <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#818CF8", marginTop: 6, flexShrink: 0 }} />
+              <p style={{ fontSize: 11, color: "#9CA3AF", lineHeight: 1.5 }}>{note}</p>
+            </li>
+          ))}
+        </ul>
       </div>
 
       {/* ── MAP FILTERS ────────────────────────── */}
