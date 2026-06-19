@@ -14,7 +14,21 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* ── Radar Marker Animation ─────────────────────────────────*/
+@keyframes radar-ping {
+  0%   { transform: scale(0.7); opacity: 1; }
+  80%  { transform: scale(2.2); opacity: 0; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.radar-marker svg circle:first-of-type {
+  animation: radar-ping 2.2s ease-out infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
 /* ── Scrollbar ──────────────────────────────────────────── */
+
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: #0B1117; }
 ::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 2px; }
