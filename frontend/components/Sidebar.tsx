@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import {
@@ -6,7 +7,6 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
-  Cell,
   Tooltip as RechartsTooltip,
 } from "recharts";
 
@@ -200,8 +200,8 @@ export default function Sidebar({ filters, toggleFilter }: SidebarProps) {
           </p>
         </div>
 
-        {/* Strategy Notes */}
-        <p className="section-label mb-3">Strategy Notes</p>
+        {/* Why This Matters */}
+        <p className="section-label mb-3">Why This Matters</p>
         <ul className="space-y-3">
           {[
             "China remains globally dominant across the midstream processing layer.",

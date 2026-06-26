@@ -28,6 +28,21 @@ def fetch_world_bank_data():
         raise Exception("World Bank API unavailable")
     return {}
 
+def fetch_usgs_metadata():
+    """
+    Simulates a fetch from the USGS Mineral Resources Data System API.
+    """
+    url = "https://mrdata.usgs.gov/services/mrds?request=GetCapabilities&service=WFS&version=1.1.0"
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+        with urllib.request.urlopen(req, timeout=5) as response:
+            if response.status == 200:
+                return True
+    except Exception as e:
+        print(f"USGS API failed: {e}")
+        raise Exception("USGS API unavailable")
+    return False
+
 def fetch_live_usgs_data():
     """
     Simulates the USGS MRDS pipeline. In a full production run, this uses Pandas to parse 
@@ -35,6 +50,8 @@ def fetch_live_usgs_data():
     LIVE World Bank data to fulfill the public data requirement.
     """
     wb_data = fetch_world_bank_data()
+    fetch_usgs_metadata() # Validate USGS connection
+    
     
     usgs_nodes = [
         {
