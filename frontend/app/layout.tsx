@@ -5,7 +5,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Real Rails: Rare Earth Dependency Map",
+  title: "Inforcreon Internship: Rare Earth Dependency Map",
   description: "High-performance interactive visualization dashboard",
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import dynamic from "next/dynamic";
@@ -23,8 +24,10 @@ const DependencyMap = dynamic(() => import("./DependencyMap"), {
 
 export default function MainStage({
   filters,
+  onSelectNode,
 }: {
   filters: { extraction: boolean; processing: boolean };
+  onSelectNode: (node: any) => void;
 }) {
   const [mounted, setMounted] = useState(false);
 
@@ -32,14 +35,14 @@ export default function MainStage({
 
   return (
     <main
-      className="w-[70%] h-screen relative overflow-hidden z-0"
-      style={{ background: "#030b14" }}
+      className="w-full h-screen relative overflow-hidden z-0"
+      style={{ background: "#040907" }}
     >
       {/* Dot grid overlay */}
       <div
         className="absolute inset-0 pointer-events-none z-10 opacity-[0.06]"
         style={{
-          backgroundImage: "radial-gradient(circle, #38BDF8 1px, transparent 1px)",
+          backgroundImage: "radial-gradient(circle, #34D399 1px, transparent 1px)",
           backgroundSize: "40px 40px",
         }}
       />
@@ -48,10 +51,10 @@ export default function MainStage({
         className="absolute inset-0 pointer-events-none z-10"
         style={{
           background:
-            "radial-gradient(ellipse at center, transparent 50%, rgba(3,7,18,0.7) 100%)",
+            "radial-gradient(ellipse at center, transparent 50%, rgba(4,9,7,0.8) 100%)",
         }}
       />
-      {mounted && <DependencyMap filters={filters} />}
+      {mounted && <DependencyMap filters={filters} onSelectNode={onSelectNode} />}
     </main>
   );
 }

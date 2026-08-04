@@ -1,0 +1,5 @@
+.env
+repomix-output.xml
+backend/venv/
+frontend/.next/
+frontend/node_modules/

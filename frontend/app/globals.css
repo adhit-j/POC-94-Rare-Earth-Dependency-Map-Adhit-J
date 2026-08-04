@@ -9,7 +9,7 @@
 }
 
 body {
-  background-color: #030712;
+  background-color: #040907;
   color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -30,14 +30,14 @@ body {
 /* ── Scrollbar ──────────────────────────────────────────── */
 
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #0B1117; }
-::-webkit-scrollbar-thumb { background: #1F2937; border-radius: 2px; }
-::-webkit-scrollbar-thumb:hover { background: #38BDF8; }
+::-webkit-scrollbar-track { background: #081410; }
+::-webkit-scrollbar-thumb { background: #162e24; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #34D399; }
 
 /* ── Glass Card ─────────────────────────────────────────── */
 .glass-card {
-  background: rgba(11, 17, 23, 0.85);
-  border: 1px solid #1F2937;
+  background: rgba(8, 20, 16, 0.85);
+  border: 1px solid #162e24;
   border-radius: 0.75rem;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -45,22 +45,22 @@ body {
 }
 
 .glass-card:hover {
-  border-color: rgba(56, 189, 248, 0.25);
+  border-color: rgba(52, 211, 153, 0.25);
 }
 
-/* ── Cyan Glow Effects ──────────────────────────────────── */
+/* ── Green Glow Effects ──────────────────────────────────── */
 .glow-active {
-  box-shadow: 0 0 14px 1px rgba(56, 189, 248, 0.45);
-  border-color: #38BDF8;
+  box-shadow: 0 0 14px 1px rgba(52, 211, 153, 0.45);
+  border-color: #34D399;
 }
 
 .glow-text {
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.6);
+  text-shadow: 0 0 20px rgba(52, 211, 153, 0.6);
 }
 
 .glow-indigo {
-  box-shadow: 0 0 14px 1px rgba(129, 140, 248, 0.4);
-  border-color: #818CF8;
+  box-shadow: 0 0 14px 1px rgba(16, 185, 129, 0.4);
+  border-color: #10B981;
 }
 
 /* ── Animated Pulse Dot ─────────────────────────────────── */
@@ -75,7 +75,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #38BDF8;
+  background-color: #34D399;
 }
 
 .pulse-dot::before {
@@ -83,7 +83,7 @@ body {
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  background-color: #38BDF8;
+  background-color: #34D399;
   animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
 }
 
@@ -99,7 +99,7 @@ body {
 
 /* ── Gradient Title ─────────────────────────────────────── */
 .gradient-title {
-  background: linear-gradient(135deg, #ffffff 0%, #38BDF8 60%, #818CF8 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #34D399 60%, #10B981 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -111,7 +111,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #818CF8;
+  color: #10B981;
 }
 
 /* ── Filter Toggle ──────────────────────────────────────── */
@@ -121,33 +121,33 @@ body {
   gap: 0.625rem;
   padding: 0.5rem 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid #1F2937;
+  border: 1px solid #162e24;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .filter-toggle:hover {
-  border-color: rgba(56, 189, 248, 0.4);
-  background: rgba(56, 189, 248, 0.05);
+  border-color: rgba(52, 211, 153, 0.4);
+  background: rgba(52, 211, 153, 0.05);
 }
 
 .filter-toggle.active {
-  border-color: rgba(56, 189, 248, 0.5);
-  background: rgba(56, 189, 248, 0.08);
+  border-color: rgba(52, 211, 153, 0.5);
+  background: rgba(52, 211, 153, 0.08);
 }
 
 /* ── Progress Bar ───────────────────────────────────────── */
 .progress-bar {
   height: 4px;
   border-radius: 99px;
-  background: #1F2937;
+  background: #162e24;
   overflow: hidden;
 }
 
 .progress-bar-fill {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #38BDF8, #818CF8);
+  background: linear-gradient(90deg, #34D399, #10B981);
   transition: width 1s ease;
 }
 
@@ -156,8 +156,8 @@ body {
   width: 100%;
   padding: 0.75rem 1rem;
   background: transparent;
-  border: 1px solid #38BDF8;
-  color: #38BDF8;
+  border: 1px solid #34D399;
+  color: #34D399;
   font-weight: 600;
   font-size: 0.8rem;
   letter-spacing: 0.06em;
@@ -172,14 +172,14 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(129,140,248,0.08));
+  background: linear-gradient(135deg, rgba(52,211,153,0.12), rgba(16,185,129,0.08));
   opacity: 0;
   transition: opacity 0.25s ease;
 }
 
 .download-btn:hover::before { opacity: 1; }
 .download-btn:hover {
-  box-shadow: 0 0 20px rgba(56, 189, 248, 0.35);
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.35);
   transform: translateY(-1px);
 }
 
@@ -194,8 +194,8 @@ body {
   align-items: center;
   gap: 0.75rem;
   padding: 0.5rem 1.25rem;
-  background: rgba(11, 17, 23, 0.9);
-  border: 1px solid rgba(56, 189, 248, 0.3);
+  background: rgba(8, 20, 16, 0.9);
+  border: 1px solid rgba(52, 211, 153, 0.3);
   border-radius: 9999px;
   backdrop-filter: blur(16px);
   white-space: nowrap;
@@ -204,10 +204,10 @@ body {
 /* ── Leaflet Overrides ──────────────────────────────────── */
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
-  background-color: #0B1117 !important;
+  background-color: #081410 !important;
   color: white !important;
-  border: 1px solid rgba(56, 189, 248, 0.3) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(56, 189, 248, 0.15) !important;
+  border: 1px solid rgba(52, 211, 153, 0.3) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 20px rgba(52, 211, 153, 0.15) !important;
   border-radius: 0.75rem !important;
 }
 
@@ -225,7 +225,7 @@ body {
 }
 
 .leaflet-popup-tip {
-  background: #0B1117 !important;
+  background: #081410 !important;
 }
 
 .leaflet-container a.leaflet-popup-close-button {
@@ -235,11 +235,11 @@ body {
 }
 
 .leaflet-container a.leaflet-popup-close-button:hover {
-  color: #38BDF8 !important;
+  color: #34D399 !important;
 }
 
 .leaflet-container {
-  background: #030712 !important;
+  background: #040907 !important;
 }
 
 .leaflet-attribution-flag { display: none !important; }
