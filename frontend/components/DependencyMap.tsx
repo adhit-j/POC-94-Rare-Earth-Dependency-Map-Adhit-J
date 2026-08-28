@@ -151,19 +151,17 @@ export default function DependencyMap({
         style={{ background: "#040907" }}
         zoomControl={false}
       >
-        {/* Dark, no-labels tile for a cleaner intelligence-map look */}
+        {/* High-contrast dark basemap without API key requirement */}
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png"
-          attribution='&copy; <a href="https://carto.com/attributions">CARTO</a>'
-          subdomains="abcd"
-          maxZoom={20}
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}"
+          attribution='&copy; <a href="https://www.esri.com/">Esri</a>'
+          maxZoom={16}
           noWrap={true}
         />
-        {/* Labels-only overlay so country names still appear */}
+        {/* Crisp country and city labels overlay */}
         <TileLayer
-          url="https://{s}.basemaps.cartocdn.com/dark_only_labels/{z}/{x}/{y}{r}.png"
-          subdomains="abcd"
-          maxZoom={20}
+          url="https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Reference/MapServer/tile/{z}/{y}/{x}"
+          maxZoom={16}
           pane="shadowPane"
           noWrap={true}
         />
@@ -237,7 +235,7 @@ export default function DependencyMap({
           </div>
         ))}
         <div style={{ width: 1, height: 10, background: "#162e24" }} />
-        <span style={{ fontSize: 9, color: "#4B5563" }}>Tile: CARTO Dark · World Bank API</span>
+        <span style={{ fontSize: 9, color: "#4B5563" }}>Tile: Esri Dark Canvas · World Bank API</span>
       </div>
     </div>
   );
