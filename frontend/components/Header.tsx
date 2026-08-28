@@ -14,7 +14,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             <span className="pulse-dot" />
             <span className="text-[10px] font-bold text-primary tracking-[0.25em] uppercase">
-              Inforcreon Internship
+              Infocreon Internship
             </span>
           </div>
           <span className="text-gray-600 text-xs">|</span>
@@ -111,7 +111,7 @@ export default function Header() {
             {/* Footer */}
             <div className="mt-6 text-center">
               <p className="text-[9px] text-gray-600 uppercase tracking-widest">
-                Inforcreon Internship Protocol · POC-94
+                Infocreon Internship Protocol · POC-94
               </p>
             </div>
           </div>
